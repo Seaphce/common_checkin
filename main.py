@@ -29,7 +29,7 @@ def sign(order,user,pwd):
                 # 进行登录
                 response = json.loads(session.post(url=login_url,headers=header,data=data).text)
                 print('1-登录完成')
-                print(result)
+                print(response)
                 print(response['msg'])
                 result = json.loads(session.post(url=check_url,headers=header).text)
                 print('2-签到完毕')
