@@ -29,6 +29,7 @@ def sign(order,user,pwd):
                 print(response['msg'])
                 # 进行签到
                 result = json.loads(session.post(url=check_url,headers=header).text)
+                print(result)
                 print(result['msg'])
                 content = result['msg']
                 # 进行推送
