@@ -59,7 +59,7 @@ if __name__ == '__main__':
                 print('配置文件格式错误')
                 exit()
         user_quantity = len(configs)
-        user_quantity = user_quantity // 2
+        # user_quantity = user_quantity // 2
         print(f'cfg length：{user_quantity}')
         for i in range(0,user_quantity,2):
                 user = configs[i]
