@@ -1,6 +1,6 @@
 import requests, json, re, os
 
-session = requests.session()
+# session = requests.session()
 # 机场的地址
 url = os.environ.get('URL')
 # 配置用户名（一般是邮箱）
@@ -25,8 +25,10 @@ def sign(order,user,pwd):
         try:
                 print(f'===账号{order}进行登录...===')
                 print(f'账号：{user}')
-                print(user)
+                usr_name = '[' + user + ']'
+                print(usr_name)
                 # 进行登录
+                session = requests.session()
                 login_res_str = session.post(url=login_url,headers=header,data=data).text
                 print(login_res_str)
                 response = json.loads(login_res_str)
