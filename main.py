@@ -29,7 +29,7 @@ def sign(order,user,pwd):
                 # 进行登录
                 login_res_str = session.post(url=login_url,headers=header,data=data).text
                 print(login_res_str)
-                response = json.loads(res_str)
+                response = json.loads(login_res_str)
                 print('1-登录完成')
                 #
                 check_res_str = session.post(url=check_url,headers=header).text
@@ -60,8 +60,8 @@ if __name__ == '__main__':
                 exit()
         user_quantity = len(configs)
         user_quantity = user_quantity // 2
-        for i in range(user_quantity):
-                user = configs[i*2]
-                pwd = configs[i*2+1]
+        for i in range(0,user_quantity,2):
+                user = configs[i]
+                pwd = configs[i+1]
                 sign(i,user,pwd)
         
