@@ -27,11 +27,14 @@ def sign(order,user,pwd):
                 print(f'账号：{user}')
                 print(user)
                 # 进行登录
-                response = json.loads(session.post(url=login_url,headers=header,data=data).text)
+                login_res_str = session.post(url=login_url,headers=header,data=data).text
+                print(login_res_str)
+                response = json.loads(res_str)
                 print('1-登录完成')
-                print(response)
-                print(response['msg'])
-                result = json.loads(session.post(url=check_url,headers=header).text)
+                #
+                check_res_str = session.post(url=check_url,headers=header).text
+                print(check_res_str)
+                result = json.loads(check_res_str)
                 print('2-签到完毕')
                 print(result)
                 print(result['msg'])
