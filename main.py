@@ -60,6 +60,7 @@ if __name__ == '__main__':
                 exit()
         user_quantity = len(configs)
         user_quantity = user_quantity // 2
+        print(f'cfg length：{user_quantity}')
         for i in range(0,user_quantity,2):
                 user = configs[i]
                 pwd = configs[i+1]
